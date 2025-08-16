@@ -21,6 +21,10 @@ app.use(cors({
 // Rotas  
 app.use('/api', itensRouter)
 
+// JSON  
+app.use(express.json())  
+app.use(express.urlencoded({ extended: true }))
+
 // Resposta padrão para quaisquer outras requisições:
 app.use((req, res) => {
     res.status(404);
